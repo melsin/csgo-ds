@@ -13,6 +13,6 @@ CMD [ "/apps/steam/csgo-ds/srcds_run", \
         "-console", \
         "-usercon", \
         "+game_type", "0" \
-        "+mapgroup", "mg_casualdelta" \
-        "+map", "de_inferno"
+        "+mapgroup", "mg_casualdelta", \
+        "+map", "de_inferno", \
      ]
