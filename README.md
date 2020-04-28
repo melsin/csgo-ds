@@ -1,7 +1,12 @@
-# Counter-Strike: Global Offensive Dedicated Server in Docker
+# Counter-Strike: Global Offensive with Docker
 
-A collection of Dockerfiles and some scripts to quickly and easily run Counter-Strike: Global Offensive
+A collection of Dockerfiles and some scripts to quickly and easily run a Counter-Strike: Global Offensive source dedicated server from inside a Linux container with Docker (or your container runtime of choice).
+
+## Building the images
+
 You build all the images for `docker-compose build` from the root of the repository.
+
+__Note:__ docker-compose is only used to manage the build dependancy. Its not used to run the service.
 
 ## TODO
 
