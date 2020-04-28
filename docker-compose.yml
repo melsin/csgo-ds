@@ -1,20 +1,20 @@
 version: '3'
 services:
   steamcmd:
-    build: steamcmd
+    build: dockerfiles/steamcmd
   csgo-srcds:
-    build: csgo-srcds
+    build: dockerfiles/csgo-srcds
     depends_on:
       - 'steamcmd'
   csgo-metamod:
-    build: csgo-metamod
+    build: dockerfiles/csgo-metamod
     depends_on:
       - 'csgo-srcds'
   csgo-sourcemod:
-    build: csgo-sourcemod
+    build: dockerfiles/csgo-sourcemod
     depends_on:
       - 'csgo-metamod'
   csgo-retakes:
-    build: 'csgo-retakes'
+    build: dockerfiles/csgo-retakes
     depends_on:
       - 'csgo-sourcemod'
