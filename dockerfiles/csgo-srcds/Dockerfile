@@ -17,11 +17,22 @@ RUN  $STEAMCMD_BIN \
 RUN curl -O https://raw.githubusercontent.com/melsin/csgo-ds/master/cfg/nade_king_prac_cfg.tar.gz && \
      tar zxf nade_king_prac_cfg.tar.gz -C $SRCDS_HOME/csgo/cfg && \
      rm nade_king_prac_cfg.tar.gz
+     
+ENV 	SRCDS_TOKEN=0 \
+	SRCDS_RCONPW="rcon_pass" \
+	SRCDS_MAP="de_inferno" \
+	SRCDS_MAPGROUP="mg_casualdelta" \
+	SRCDS_GAMETYPE=0 \
+	SRCDS_GAMEMODE=1 \
+     SRCDS_CMD="-maxplayers_override 20"
 
 CMD [ "$SRCDS_HOME/srcds_run", \
         "-game", "csgo", \
         "-console", \
         "-usercon", \
-        "+game_type", "0", \
-        "+mapgroup", "mg_casualdelta", \
-        "+map", "de_inferno" ]
+        "+game_type", $SRCDS_GAMETYPE, \
+        "+mapgroup", $SRCDS_MAPGROUP, \
+        "+map", $SRCDS_MAP \
+        "+rcon_password", $SRCDS_RCONPW \
+        "+sv_setsteamaccount", $SRCDS_TOKEN, \
+        ,$SRCDS_CMD ]
