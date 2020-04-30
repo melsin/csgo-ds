@@ -13,6 +13,10 @@ RUN  $STEAMCMD_BIN \
        +login anonymous \
        +app_update 740 validate \
        +quit
+       
+RUN curl -O https://raw.githubusercontent.com/melsin/csgo-ds/master/cfg/nade_king_prac_cfg.tar.gz && \
+     tar zxf nade_king_prac_cfg.tar.gz -C $SRCDS_HOME/csgo/cfg && \
+     rm nade_king_prac_cfg.tar.gz
 
 CMD [ "$SRCDS_HOME/srcds_run", \
         "-game", "csgo", \
