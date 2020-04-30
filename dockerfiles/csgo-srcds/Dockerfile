@@ -35,4 +35,4 @@ CMD [ "$SRCDS_HOME/srcds_run", \
         "+map", $SRCDS_MAP \
         "+rcon_password", $SRCDS_RCONPW \
         "+sv_setsteamaccount", $SRCDS_TOKEN, \
-        ,$SRCDS_CMD ]
+        $SRCDS_CMD ]
